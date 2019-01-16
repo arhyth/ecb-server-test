@@ -1,4 +1,7 @@
 defmodule EcbServerTest.Currency do
+  @moduledoc """
+  Currency schema
+  """
   use Ecto.Schema
 
   import Ecto.Changeset
