@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Repo.Migrations.CreateRateSchema do
+defmodule EcbApp.Repo.Migrations.CreateRateSchema do
   use Ecto.Migration
 
   def change do
@@ -6,11 +6,7 @@ defmodule EcbServerTest.Repo.Migrations.CreateRateSchema do
       add :date, :date
       add :value, :decimal
 
-      add :currency, references(:currencies)
-
       timestamps()
     end
-
-    unique_index(:rates, [:date, :currency])
   end
 end

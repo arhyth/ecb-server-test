@@ -1,7 +1,7 @@
-defmodule EcbServerTestWeb.Endpoint do
-  use Phoenix.Endpoint, otp_app: :ecb_server_test
+defmodule EcbAppWeb.Endpoint do
+  use Phoenix.Endpoint, otp_app: :ecb_app
 
-  socket "/socket", EcbServerTestWeb.UserSocket,
+  socket "/socket", EcbAppWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -11,7 +11,7 @@ defmodule EcbServerTestWeb.Endpoint do
   # when deploying your static files in production.
   plug Plug.Static,
     at: "/",
-    from: :ecb_server_test,
+    from: :ecb_app,
     gzip: false,
     only: ~w(css fonts images js favicon.ico robots.txt)
 
@@ -39,8 +39,8 @@ defmodule EcbServerTestWeb.Endpoint do
   # Set :encryption_salt if you would also like to encrypt it.
   plug Plug.Session,
     store: :cookie,
-    key: "_ecb_server_test_key",
+    key: "_ecb_app_key",
     signing_salt: "McwH1K5C"
 
-  plug EcbServerTestWeb.Router
+  plug EcbAppWeb.Router
 end

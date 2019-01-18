@@ -7,15 +7,15 @@
 # General application configuration
 use Mix.Config
 
-config :ecb_server_test,
-  ecto_repos: [EcbServerTest.Repo]
+config :ecb_app,
+  ecto_repos: [EcbApp.Repo]
 
 # Configures the endpoint
-config :ecb_server_test, EcbServerTestWeb.Endpoint,
+config :ecb_app, EcbAppWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "Vvg4/B2hj7ajgx49UfrA2CJ1hTMkg9vtH8L0ArGkL9OG5gTPJAnqc0doOvkco1yI",
-  render_errors: [view: EcbServerTestWeb.ErrorView, accepts: ~w(html json)],
-  pubsub: [name: EcbServerTest.PubSub, adapter: Phoenix.PubSub.PG2]
+  render_errors: [view: EcbAppWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: EcbApp.PubSub, adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,

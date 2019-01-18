@@ -1,11 +1,11 @@
-defmodule EcbServerTestWeb.Router do
-  use EcbServerTestWeb, :router
+defmodule EcbAppWeb.Router do
+  use EcbAppWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/", EcbServerTestWeb do
+  scope "/", EcbAppWeb do
     pipe_through :api
 
     get "/rates/latest", RateController, :latest

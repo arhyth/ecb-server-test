@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Application do
+defmodule EcbApp.Application do
   # See https://hexdocs.pm/elixir/Application.html
   # for more information on OTP Applications
   @moduledoc false
@@ -9,23 +9,23 @@ defmodule EcbServerTest.Application do
     # List all child processes to be supervised
     children = [
       # Start the Ecto repository
-      EcbServerTest.Repo,
+      EcbApp.Repo,
       # Start the endpoint when the application starts
-      EcbServerTestWeb.Endpoint
-      # Starts a worker by calling: EcbServerTest.Worker.start_link(arg)
-      # {EcbServerTest.Worker, arg},
+      EcbAppWeb.Endpoint
+      # Starts a worker by calling: EcbApp.Worker.start_link(arg)
+      # {EcbApp.Worker, arg},
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
     # for other strategies and supported options
-    opts = [strategy: :one_for_one, name: EcbServerTest.Supervisor]
+    opts = [strategy: :one_for_one, name: EcbApp.Supervisor]
     Supervisor.start_link(children, opts)
   end
 
   # Tell Phoenix to update the endpoint configuration
   # whenever the application is updated.
   def config_change(changed, _new, removed) do
-    EcbServerTestWeb.Endpoint.config_change(changed, removed)
+    EcbAppWeb.Endpoint.config_change(changed, removed)
     :ok
   end
 end

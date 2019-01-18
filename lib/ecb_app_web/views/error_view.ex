@@ -1,5 +1,5 @@
-defmodule EcbServerTestWeb.ErrorView do
-  use EcbServerTestWeb, :view
+defmodule EcbAppWeb.ErrorView do
+  use EcbAppWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Currency do
+defmodule EcbApp.Currency do
   @moduledoc """
   Currency schema
   """
@@ -6,13 +6,13 @@ defmodule EcbServerTest.Currency do
 
   import Ecto.Changeset
 
-  alias EcbServerTest.Currency
-  alias EcbServerTest.Rate
+  alias EcbApp.Currency
+  alias EcbApp.Rate
 
   @attrs [:symbol]
 
   schema "currencies" do
-    field :symbol, :string, unique: true
+    field :symbol, :string
     has_many :rates, Rate
 
     timestamps()

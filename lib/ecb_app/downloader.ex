@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Downloader do
+defmodule EcbApp.Downloader do
   @moduledoc """
   ECB client module
   """

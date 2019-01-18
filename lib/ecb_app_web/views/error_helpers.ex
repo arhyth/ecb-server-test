@@ -1,4 +1,4 @@
-defmodule EcbServerTestWeb.ErrorHelpers do
+defmodule EcbAppWeb.ErrorHelpers do
   @moduledoc """
   Conveniences for translating and building error messages.
   """
@@ -36,9 +36,9 @@ defmodule EcbServerTestWeb.ErrorHelpers do
     # should be written to the errors.po file. The :count option is
     # set by Ecto and indicates we should also apply plural rules.
     if count = opts[:count] do
-      Gettext.dngettext(EcbServerTestWeb.Gettext, "errors", msg, msg, count, opts)
+      Gettext.dngettext(EcbAppWeb.Gettext, "errors", msg, msg, count, opts)
     else
-      Gettext.dgettext(EcbServerTestWeb.Gettext, "errors", msg, opts)
+      Gettext.dgettext(EcbAppWeb.Gettext, "errors", msg, opts)
     end
   end
 end

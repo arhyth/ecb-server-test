@@ -1,16 +1,23 @@
-defmodule EcbServerTest.MixProject do
+defmodule EcbApp.MixProject do
   use Mix.Project
 
   def project do
     [
-      app: :ecb_server_test,
+      app: :ecb_app,
       version: "0.1.0",
       elixir: "~> 1.5",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
     ]
   end
 
@@ -19,7 +26,7 @@ defmodule EcbServerTest.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {EcbServerTest.Application, []},
+      mod: {EcbApp.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -45,7 +52,7 @@ defmodule EcbServerTest.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:httpoison, "~> 1.5"},
 
-      {:mock, "~> 0.3.2", only: :test}
+      {:excoveralls, "~> 0.10", only: :test},
     ]
   end
 

@@ -6,7 +6,7 @@ use Mix.Config
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :ecb_server_test, EcbServerTestWeb.Endpoint,
+config :ecb_app, EcbAppWeb.Endpoint,
   http: [port: System.get_env("PORT") || 4000],
   debug_errors: true,
   code_reloader: true,
@@ -46,13 +46,13 @@ config :ecb_server_test, EcbServerTestWeb.Endpoint,
 # different ports.
 
 # Watch static and templates for browser reloading.
-config :ecb_server_test, EcbServerTestWeb.Endpoint,
+config :ecb_app, EcbAppWeb.Endpoint,
   live_reload: [
     patterns: [
       ~r{priv/static/.*(js|css|png|jpeg|jpg|gif|svg)$},
       ~r{priv/gettext/.*(po)$},
-      ~r{lib/ecb_server_test_web/views/.*(ex)$},
-      ~r{lib/ecb_server_test_web/templates/.*(eex)$}
+      ~r{lib/ecb_app_web/views/.*(ex)$},
+      ~r{lib/ecb_app_web/templates/.*(eex)$}
     ]
   ]
 
@@ -67,9 +67,9 @@ config :phoenix, :stacktrace_depth, 20
 config :phoenix, :plug_init_mode, :runtime
 
 # Configure your database
-config :ecb_server_test, EcbServerTest.Repo,
+config :ecb_app, EcbApp.Repo,
   username: "postgres",
   password: "postgres",
-  database: "ecb_server_test_dev",
+  database: "ecb_app_dev",
   hostname: "localhost",
   pool_size: 10

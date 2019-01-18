@@ -1,12 +1,12 @@
-defmodule EcbServerTestWeb do
+defmodule EcbAppWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use EcbServerTestWeb, :controller
-      use EcbServerTestWeb, :view
+      use EcbAppWeb, :controller
+      use EcbAppWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,19 +19,19 @@ defmodule EcbServerTestWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: EcbServerTestWeb
+      use Phoenix.Controller, namespace: EcbAppWeb
 
       import Plug.Conn
-      import EcbServerTestWeb.Gettext
-      alias EcbServerTestWeb.Router.Helpers, as: Routes
+      import EcbAppWeb.Gettext
+      alias EcbAppWeb.Router.Helpers, as: Routes
     end
   end
 
   def view do
     quote do
       use Phoenix.View,
-        root: "lib/ecb_server_test_web/templates",
-        namespace: EcbServerTestWeb
+        root: "lib/ecb_app_web/templates",
+        namespace: EcbAppWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller, only: [get_flash: 1, get_flash: 2, view_module: 1]
@@ -39,9 +39,9 @@ defmodule EcbServerTestWeb do
       # Use all HTML functionality (forms, tags, etc)
       use Phoenix.HTML
 
-      import EcbServerTestWeb.ErrorHelpers
-      import EcbServerTestWeb.Gettext
-      alias EcbServerTestWeb.Router.Helpers, as: Routes
+      import EcbAppWeb.ErrorHelpers
+      import EcbAppWeb.Gettext
+      alias EcbAppWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -56,7 +56,7 @@ defmodule EcbServerTestWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import EcbServerTestWeb.Gettext
+      import EcbAppWeb.Gettext
     end
   end
 

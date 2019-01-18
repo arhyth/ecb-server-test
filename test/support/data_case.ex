@@ -1,4 +1,4 @@
-defmodule EcbServerTest.DataCase do
+defmodule EcbApp.DataCase do
   @moduledoc """
   This module defines the setup for tests requiring
   access to the application's data layer.
@@ -16,20 +16,20 @@ defmodule EcbServerTest.DataCase do
 
   using do
     quote do
-      alias EcbServerTest.Repo
+      alias EcbApp.Repo
 
       import Ecto
       import Ecto.Changeset
       import Ecto.Query
-      import EcbServerTest.DataCase
+      import EcbApp.DataCase
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(EcbServerTest.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(EcbApp.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(EcbServerTest.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(EcbApp.Repo, {:shared, self()})
     end
 
     :ok

@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Repo.Migrations.CreateCurrencySchema do
+defmodule EcbApp.Repo.Migrations.CreateCurrencySchema do
   use Ecto.Migration
 
   def change do
@@ -7,7 +7,5 @@ defmodule EcbServerTest.Repo.Migrations.CreateCurrencySchema do
 
       timestamps()
     end
-
-    unique_index(:currencies, [:symbol])
   end
 end

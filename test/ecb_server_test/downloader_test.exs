@@ -1,7 +1,7 @@
-defmodule EcbServerTest.DownloaderTest do
+defmodule EcbApp.DownloaderTest do
   use ExUnit.Case
 
-  alias EcbServerTest.Downloader
+  alias EcbApp.Downloader
 
   @xml_uri "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-hist-90d.xml"
   @nonexistent_url "htttp://nothing.here"

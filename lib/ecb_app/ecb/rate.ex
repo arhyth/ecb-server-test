@@ -1,4 +1,4 @@
-defmodule EcbServerTest.Rate do
+defmodule EcbApp.Rate do
   @moduledoc """
   Rate schema
   """
@@ -6,12 +6,12 @@ defmodule EcbServerTest.Rate do
 
   import Ecto.Changeset
 
-  alias EcbServerTest.{
+  alias EcbApp.{
     Currency,
     Rate
   }
 
-  @attrs [:date, :value]
+  @attrs [:date, :value, :currency_id]
 
   schema "rates" do
     field :date, :date
@@ -26,6 +26,5 @@ defmodule EcbServerTest.Rate do
     rate
     |> cast(attrs, @attrs)
     |> validate_required(@attrs)
-    |> unique_constraint(:date_currency)
   end
 end

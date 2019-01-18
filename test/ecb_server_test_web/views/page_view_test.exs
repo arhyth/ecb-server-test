@@ -1,3 +1,3 @@
-defmodule EcbServerTestWeb.PageViewTest do
-  use EcbServerTestWeb.ConnCase, async: true
+defmodule EcbAppWeb.PageViewTest do
+  use EcbAppWeb.ConnCase, async: true
 end
